@@ -67,19 +67,18 @@ canvas {
 }
 
 .help {
-  color: #EEEEEE;
-  background-color: #111111;
-  margin: -15px auto;
+  color: #44CCFF;
+  background-color: #11111F;
+  margin: 30px auto;
   text-align: center;
-  float: right;
-  width: 400px;
-  height: 100px;
+  width: 98%;
+  height: 80px;
   border-style: solid;
   border-width: 2px;
   border-radius: 8px;
-  border-color: #111111;
-  font-size: 14px;
-  margin-left: 4px;
+  border-color: #11111F;
+  font-size: 12px;
+  line-height: 1;
 }
 
 div {}

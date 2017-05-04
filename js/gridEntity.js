@@ -1,5 +1,5 @@
 function GridEntity() {
-  
+
   this.x = 0;
   this.y = 0;
   this.row = 0;
@@ -13,7 +13,7 @@ function GridEntity() {
       canvas.context.strokeStyle = settings.GRID_COLOR;
       canvas.context.strokeRect(this.x, this.y, 40, 40);
       canvas.context.stroke();
-  }
+    }
   };
 
   this.add = function(_x, _y, _row, _col, _id) {
@@ -24,8 +24,8 @@ function GridEntity() {
       this.isActive = true;
     },
 
-  this.reset = function(_x, _y, _row, _col, _id) {
-    this.x = _x;
+    this.reset = function(_x, _y, _row, _col, _id) {
+      this.x = _x;
       this.y = _y;
       this.row = _row;
       this.col = _col;
