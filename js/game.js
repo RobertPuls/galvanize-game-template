@@ -7,14 +7,12 @@ window.onload = function() {
   var allowMove = true;
   var targetX = 0;
   var targetY = 0;
-
   var clearEffectCounter = 0;
   var coolMode = false;
   var statusMode = "normal";
-
-
+  var timer = undefined;
   var timeToResetMessage = 0;
-
+  var isChangeLevel = false;
   var consoleMessage = "Go go go!";
 
   factory.createGridEntities();
@@ -22,22 +20,16 @@ window.onload = function() {
   factory.createCoins();
 
 
-  var isChangeLevel = false;
-
   canvas.init();
   levelManager.buildStage(stages[0]);
 
-
-  utility.getElement("console").innerHTML = global.score;
-
-  targetX = hero.x;
-  targetY = hero.y;
+  reset();
 
   start();
 
   function start() {
     gameState = 1;
-    setInterval(update, settings.TIME_DELAY);
+    timer = setInterval(update, settings.TIME_DELAY);
   }
 
   document.onkeydown = function myFunction() {
@@ -97,7 +89,7 @@ window.onload = function() {
         pause();
       }
       if (event.keyCode == 88) {
-        //console.log("Cool Mode activated/deactivated");
+          //console.log("Cool Mode activated/deactivated");
         if (coolMode) {
           clearEffectCounter = 0;
           coolMode = false;
@@ -119,6 +111,7 @@ window.onload = function() {
     consoleMessage = "Shaking :)";
     sound.playError();
     timeToResetMessage = 50;
+
   }
 
   function updateCoolMode() {
@@ -133,19 +126,14 @@ window.onload = function() {
       statusMode = "Normal";
       clearEffectCounter = canvas.width;
     }
+
   }
 
   function draw() {
 
-    //console.log("clearEffectCounter " + clearEffectCounter);
-
     canvas.context.clearRect(0, 0, clearEffectCounter, clearEffectCounter);
-
-
     drawEntities();
-
     updateHeroPosition();
-
     hero.draw();
 
   }
@@ -194,7 +182,6 @@ window.onload = function() {
         timeToResetMessage = 100;
       }
 
-
       allowMove = true;
     } else {
       allowMove = false;
@@ -220,6 +207,7 @@ window.onload = function() {
         consoleMessage = "Go go go!";
       }
     }
+
   }
 
   function reset() {
@@ -244,7 +232,6 @@ window.onload = function() {
   function gotoNextLevel() {
 
     anim.fadeIn(utility.getElement("canvas"));
-
     canvas.context.clearRect(0, 0, canvas.width, canvas.height);
     levelManager.currentLevelIndex++;
     levelManager.currentLevelIndex %= stages.length; // clearn expression to repeat levels once you exceed the final stage
@@ -277,7 +264,7 @@ window.onload = function() {
   }
 
   function stop() {
-
+    
   }
 
 }

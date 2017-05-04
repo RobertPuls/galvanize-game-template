@@ -37,7 +37,7 @@ var sound = {
     this.soundTrack.play();
   },
 
-  stopMusic: function () {
+  stopMusic: function() {
     this.soundTrack.pause();
   }
 }

@@ -1,4 +1,5 @@
 function Brick() {
+  
   this.x = 0;
   this.y = 0;
   this.row = 0;
@@ -11,11 +12,11 @@ function Brick() {
   this.draw = function(change_color = false) {
     if (this.isActive) {
       //var gridSize = canvas.width / global.map[0].length ;
-      if(change_color) {
+      if (change_color) {
         //this.color = settings.BRICK_COLOR_ARRAY[this.indexColor];
         //this.indexColor += 1;
         this.color = utility.getRandomColor();
-        if(this.indexColor > settings.BRICK_COLOR_ARRAY.length - 1) {
+        if (this.indexColor > settings.BRICK_COLOR_ARRAY.length - 1) {
           this.indexColor = 0;
         }
       } else {

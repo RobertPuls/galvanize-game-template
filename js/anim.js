@@ -47,24 +47,26 @@ var anim = {
       });
   },
 
-  tween: function (element) {
-    $(element).animate({left: '950px'});
+  tween: function(element) {
+    $(element).animate({
+      left: '950px'
+    });
   },
 
-  shrink: function (element) {
+  shrink: function(element) {
     $(element).animate({
-       opacity: '0.5',
-       height: '150px',
-       width: '150px'
-   });
- },
+      opacity: '0.5',
+      height: '150px',
+      width: '150px'
+    });
+  },
 
-  grow: function (element) {
+  grow: function(element) {
     $(element).animate({
-       opacity: '1',
-       height: '400px',
-       width: '400px'
-   });
+      opacity: '1',
+      height: '400px',
+      width: '400px'
+    });
   }
 
 }

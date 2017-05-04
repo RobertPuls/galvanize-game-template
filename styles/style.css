@@ -54,7 +54,6 @@ canvas {
   color: #EEEEEE;
   font-family: Arial Black;
   margin-left: 4px;
-
 }
 
 #console {
@@ -67,21 +66,13 @@ canvas {
   border-radius: 8px;
 }
 
-div {
+div {}
 
-}
+.grid {}
 
-.grid {
+.hero {}
 
-}
-
-.hero {
-
-}
-
-.brick {
-
-}
+.brick {}
 
 .text {
   color: #EEEEEE;

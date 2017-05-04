@@ -19,7 +19,7 @@ var Hero = {
     return obj;
   },
 
-  reset: function (_x, _y, _row, _col) {
+  reset: function(_x, _y, _row, _col) {
     this.x = _x;
     this.y = _y;
     this.row = _row;

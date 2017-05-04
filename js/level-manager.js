@@ -14,16 +14,15 @@ var levelManager = {
 
       for (var j = 0; j < map[i].length; j++) {
 
-
         factory.gridArray[gridIndex].add(padding + (40 + 10) * j, padding + (40 + 10) * i, i, j);
         factory.gridArray[gridIndex].draw();
-        gridIndex ++;
+        gridIndex++;
 
         if (map[i][j] == 1) {
 
           factory.brickArray[brickIndex].add(padding + (40 + 10) * j, padding + (40 + 10) * i, 40, 40);
           factory.brickArray[brickIndex].draw();
-          brickIndex ++;
+          brickIndex++;
 
         }
 
@@ -32,7 +31,7 @@ var levelManager = {
           factory.coinsArray[coinIndex].add(padding + (40 + 10) * j, padding + (40 + 10) * i, i, j);
           factory.coinsArray[coinIndex].draw();
           // console.log("adding coing");
-          coinIndex ++;
+          coinIndex++;
         }
 
         if (map[i][j] == 2) {
@@ -47,14 +46,12 @@ var levelManager = {
 
   },
 
-
   getMapIndex: function(_row, _col) {
     return global.map[_row][_col];
   },
 
-  updateMapIndex: function (_row, _col, val) {
+  updateMapIndex: function(_row, _col, val) {
     global.map[_row][_col] = val;
   }
-
 
 }

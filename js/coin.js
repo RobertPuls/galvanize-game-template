@@ -1,4 +1,5 @@
 function Coin() {
+
   this.x = 0;
   this.y = 0;
   this.row = 0;
@@ -7,6 +8,7 @@ function Coin() {
   this.isActive = false;
 
   this.draw = function() {
+    
     if (this.isActive) {
       //var gridSize = canvas.width / global.map[0].length ;
       canvas.context.fillStyle = settings.COIN_COLOR;
