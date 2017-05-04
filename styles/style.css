@@ -1,7 +1,29 @@
 html, body {
   background-color: #111111;
   margin: 0px auto;
-  font-family: Arial Black;
+  font-family: "Arial Rounded MT Bold";
+}
+
+.menu {
+  background-color: #111111;
+  margin: 20px auto;
+  font-family: "Arial Rounded MT Bold";
+  text-align: center;
+  color: #EEEEEE;
+  width: 98%;
+  height: 400px;
+  vertical-align: middle;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #222222;
+  border-radius: 10px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  line-height: 450px;
+  font-size: 3rem;
 }
 
 canvas {

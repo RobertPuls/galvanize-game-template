@@ -27,6 +27,7 @@ window.onload = function() {
   canvas.init();
   levelManager.buildStage(stages[0]);
 
+
   utility.getElement("console").innerHTML = global.score;
 
   targetX = hero.x;
