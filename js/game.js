@@ -100,9 +100,10 @@ window.onload = function() {
         if (coolMode) {
           clearEffectCounter = 0;
           coolMode = false;
-
+          sound.stopMusic();
         } else {
           coolMode = true;
+          sound.playMusic();
         }
       }
     }
@@ -178,6 +179,7 @@ window.onload = function() {
         consoleMessage = "You win!"
         gotoNextLevel();
         timeToResetMessage = 100;
+        sound.playWin();
         reset();
 
 
