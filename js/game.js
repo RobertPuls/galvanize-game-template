@@ -8,7 +8,7 @@ window.onload = function() {
   var targetX = 0;
   var targetY = 0;
   var clearEffectCounter = 0;
-  var coolMode = false;
+  var insaneMode = false;
   var statusMode = "normal";
   var timer = undefined;
   var timeToResetMessage = 0;
@@ -18,7 +18,6 @@ window.onload = function() {
   factory.createGridEntities();
   factory.createBricks();
   factory.createCoins();
-
 
   canvas.init();
   levelManager.buildStage(stages[0]);
@@ -90,12 +89,12 @@ window.onload = function() {
       }
       if (event.keyCode == 88) {
           //console.log("Cool Mode activated/deactivated");
-        if (coolMode) {
+        if (insaneMode) {
           clearEffectCounter = 0;
-          coolMode = false;
+          insaneMode = false;
           sound.stopMusic();
         } else {
-          coolMode = true;
+          insaneMode = true;
           sound.playMusic();
         }
       }
@@ -114,9 +113,9 @@ window.onload = function() {
 
   }
 
-  function updateCoolMode() {
+  function updateInsanelMode() {
 
-    if (coolMode) {
+    if (insaneMode) {
       statusMode = "Insane";
       clearEffectCounter += 5;
       if (clearEffectCounter > canvas.width) {
@@ -150,7 +149,7 @@ window.onload = function() {
 
       // kind of a hack... no need to loop through brickArray, as its length is less than gridArray
       if (factory.brickArray[i] != null) {
-        factory.brickArray[i].draw(coolMode);
+        factory.brickArray[i].draw(insaneMode);
       }
 
     }
@@ -223,7 +222,7 @@ window.onload = function() {
       global.time++;
     }
 
-    updateCoolMode();
+    updateInsanelMode();
     updateTexts();
     updateTimeMessage();
 
@@ -264,7 +263,7 @@ window.onload = function() {
   }
 
   function stop() {
-    
+
   }
 
 }
