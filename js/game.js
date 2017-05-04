@@ -9,7 +9,7 @@ window.onload = function() {
   var targetY = 0;
   var clearEffectCounter = 0;
   var insaneMode = false;
-  var statusMode = "normal";
+  var statusMode = "SANE";
   var timer = undefined;
   var timeToResetMessage = 0;
   var isChangeLevel = false;
@@ -116,13 +116,13 @@ window.onload = function() {
   function updateInsanelMode() {
 
     if (insaneMode) {
-      statusMode = "Insane";
+      statusMode = "INSANE";
       clearEffectCounter += 5;
       if (clearEffectCounter > canvas.width) {
         clearEffectCounter = 0;
       }
     } else {
-      statusMode = "Normal";
+      statusMode = "SANE";
       clearEffectCounter = canvas.width;
     }
 
@@ -163,18 +163,16 @@ window.onload = function() {
 
       if (checkGridVal(3)) { // step on the target gridEntity,
         // then you can move on to the next level
-
         consoleMessage = "You win!"
         gotoNextLevel();
         timeToResetMessage = 100;
         sound.playWin();
         reset();
 
-
       } else
-      if (checkGridVal(4)) {
-        global.score++;
-        levelManager.updateMapIndex(hero.row, hero.col, 0);
+      if (checkGridVal(4) && utility.getCoin(hero.row, hero.col).isActive) {
+        global.score ++;
+        //levelManager.updateMapIndex(hero.row, hero.col, 0);
         utility.getCoin(hero.row, hero.col).isActive = false;
         consoleMessage = "Got a coin!"
         sound.playCollectCoin();
@@ -233,7 +231,7 @@ window.onload = function() {
     anim.fadeIn(utility.getElement("canvas"));
     canvas.context.clearRect(0, 0, canvas.width, canvas.height);
     levelManager.currentLevelIndex++;
-    levelManager.currentLevelIndex %= stages.length; // clearn expression to repeat levels once you exceed the final stage
+    levelManager.currentLevelIndex %= stages.length; // clear expression to repeat levels once you exceed the final stage
     levelManager.buildStage(stages[levelManager.currentLevelIndex]);
 
   }
